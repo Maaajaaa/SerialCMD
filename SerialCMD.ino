@@ -15,7 +15,9 @@ void loop(){
       inputChar = Serial.read(); // Read character
       if(inputChar == ')'){
         inputString += inputChar;
-        Serial.print("String: ");Serial.println(inputString);
+	if(DEBUGGING){
+	  Serial.print("String: ");Serial.println(inputString);
+	}
         processInputCommand(inputString);
         inputString = "";
       }
